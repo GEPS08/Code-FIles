@@ -1,0 +1,958 @@
+-human#6756: look at this
+-human#6756: its so cool
+-human#6756: and the for loop isnt
+-human#6756: probbably issnt correct
+-human#6756: but o you see the vision
+GEPS08#5723: ya
+GEPS08#5723: no () in for statements
+-human#6756: what
+-human#6756: oh
+-human#6756: oh yeha
+-human#6756: ok
+GEPS08#5723: ya lmao
+-human#6756: wait
+-human#6756: is the list a list list or a string list
+GEPS08#5723: what
+-human#6756: a list of lists with strings
+-human#6756: or a list of strings
+GEPS08#5723: thats what i use for the currentHW
+-human#6756: the what
+GEPS08#5723: its the kind of list i use for the current homework
+-human#6756: is there non current hw
+-human#6756: what do you mean
+-human#6756: wait
+-human#6756: it has to be
+-human#6756: a string list list map
+GEPS08#5723: idk what u are saying
+-human#6756: like
+-human#6756: ```js
+{
+tasks_1085385494084472913_674390859793563677:[
+    ['hello', 'language', 'duedate', 'daily']
+    ['hello2', 'language', 'duedate', 'project']
+    ['hello3', 'language', 'duedate', 'daily']
+    ['hello4', 'language', 'duedate', ' big']
+  ]
+}
+```
+GEPS08#5723: what is THAT
+-human#6756: tasks_1085385494084472913_674390859793563677
+-human#6756: is
+-human#6756: the server
+-human#6756: first number is server
+-human#6756: second is uer id
+-human#6756: you can remove the server part
+GEPS08#5723: do i really need embeds
+-human#6756: i mena
+-human#6756: flashy
+-human#6756: and coo
+-human#6756: l
+GEPS08#5723: like what is teh point of them
+-human#6756: also
+-human#6756: they format better
+-human#6756: 
+GEPS08#5723: ya but thats like the last thing i need to do
+-human#6756: just do hard stuff first
+GEPS08#5723: no
+-human#6756: then you dont have to transfer
+GEPS08#5723: basics first
+-human#6756: transfering from message handler to slash handler sucked
+GEPS08#5723: then il do that now
+-human#6756: yeah
+GEPS08#5723: my current code it quite simple
+-human#6756: you should make a handler
+GEPS08#5723: whats that
+-human#6756: uh
+-human#6756: 
+-human#6756: you can
+-human#6756: like
+-human#6756: make index.js redirect to a different file
+-human#6756: so that its not all in 1 file
+GEPS08#5723: im good
+GEPS08#5723: we keep everything in one file
+GEPS08#5723: cry about it
+GEPS08#5723: k bouta add a slash command template thing
+-human#6756: what
+-human#6756: are there tutorials or anything
+-human#6756: i cant find any guides
+GEPS08#5723: whatever this is
+GEPS08#5723: https://stackoverflow.com/questions/71165431/how-do-i-make-a-working-slash-command-in-discord-py
+-human#6756: its a lot weirder
+-human#6756: https://www.youtube.com/watch?v=PgN9U1wBTAg&ab_channel=Digiwind
+-human#6756: did you hear anything about packaging
+-human#6756: and registering commands
+GEPS08#5723: the template worked
+GEPS08#5723: time to transfer
+-human#6756: can i see the
+GEPS08#5723: the what
+-human#6756: code
+GEPS08#5723: the template thing is here
+-human#6756: this looks really weird
+-human#6756: im confused
+GEPS08#5723: on what
+-human#6756: 
+-human#6756: this
+GEPS08#5723: not the one that i used
+-human#6756: how do you make 2 commands
+-human#6756: ```py
+@bot.tree.command(guild=MY_GUILD)
+async def slash(interaction: discord.Interaction, number: int, string: str):
+    await interaction.response.send_message(f'Modify {number=} {string=}', ephemeral=True)
+
+async def slash(interaction: discord.Interaction, number: int, string: str):
+    await interaction.response.send_message(f'Modify {number=} {string=}', ephemeral=True)
+```
+-human#6756: what
+GEPS08#5723: @tree.command(name ='add_homework', description = 'Adds homework to the list of active homework (do !addhw help for help)', guild=discord.Object(id=1085385494084472913))
+async def addhw(interaction):
+    await interaction.response.send_message('adding homwork command')
+-human#6756: how do you hadd 2
+GEPS08#5723: do another one?
+-human#6756: where is input
+GEPS08#5723: idk
+-human#6756: ```py
+@tree.command(name ='add_homework', description = 'Adds homework to the list of active homework (do !addhw help for help)', guild=discord.Object(id=1085385494084472913))
+async def addhw(interaction: discord.Interaction, duedate: str, x: str, y: str, z: str, ):
+    await interaction.response.send_message('adding homwork command')
+```
+GEPS08#5723: aaaaaaa
+-human#6756: how is it adding
+-human#6756: there is no input
+GEPS08#5723: its not
+GEPS08#5723: it just says that
+-human#6756: this
+GEPS08#5723: for now
+-human#6756: uh
+-human#6756: is there a push command
+-human#6756: also why not use an object
+-human#6756: rather than a array
+GEPS08#5723: bc arrays are cooler
+-human#6756: presonal preference
+-human#6756: ok
+-human#6756: is theere a piush command
+-human#6756: like currentHW.push([name,subject,duedate,size])
+GEPS08#5723: idk
+-human#6756: ```py
+@tree.command(name ='add_homework', description = 'Adds homework to the list of active homework (do !addhw help for help)', guild=discord.Object(id=1085385494084472913))
+async def addhw(interaction: discord.Interaction, name: str, subject: str, duedate: str, size: str, ):
+    currentHW.push([name,subject,duedate,size])
+    await interaction.response.send_message('adding homwork command')
+```
+-human#6756: heree i guess
+GEPS08#5723: why push
+-human#6756: its called append
+-human#6756: ```py
+@tree.command(name ='add_homework', description = 'Adds homework to the list of active homework (do !addhw help for help)', guild=discord.Object(id=1085385494084472913))
+async def addhw(interaction: discord.Interaction, name: str, subject: str, duedate: str, size: str, ):
+    currentHW.append([name,subject,duedate,size])
+    await interaction.response.send_message('adding homwork command')
+```
+GEPS08#5723: i already have everything else
+-human#6756: wdym
+-human#6756: ok
+GEPS08#5723: ohhhhhh
+GEPS08#5723: thats what u mean
+GEPS08#5723: yayaya
+GEPS08#5723: i can do that easy
+-human#6756: then
+-human#6756: uh
+-human#6756: use .indexOf to remove
+-human#6756: use like
+-human#6756: names
+-human#6756: in an autofill slash command
+-human#6756: you have to make an autofill thing
+-human#6756: its really dumb
+GEPS08#5723: bro
+-human#6756: overall removing is harder
+-human#6756: or you can just remove any userfriendliness
+-human#6756: what
+GEPS08#5723: i got the imput thing to work
+-human#6756: NOOOOOOOO
+-human#6756: if anyone tried to  use this they would actually just not and kick the bot
+-human#6756: 
+-human#6756: autofill
+-human#6756: its basically
+-human#6756: ```js
+const filtered = allTasks.filter(choice => choice.name.startsWith(focusedOption.value));
+```
+GEPS08#5723: what
+-human#6756: mess
+-human#6756: like fr
+-human#6756: just
+-human#6756: 
+-human#6756: look at this
+-human#6756: theres up to 20 opotions iirc
+GEPS08#5723: k
+-human#6756: but you can just grab all of the names
+GEPS08#5723: thats good
+-human#6756: and put them into the array
+-human#6756: if you want more than 20 for some reason then you would need to use autofill but its really weird
+-human#6756: i had to do this
+-human#6756: ```js
+    async autocomplete(interaction) {
+        db = interaction.client.db;
+        if (await interaction.client.db.get(`tasks_${interaction.guildId}_${interaction.user.id}`) == null) {
+            interaction.respond()
+            return
+        }
+        const focusedOption = interaction.options.getFocused(true);
+        interaction.client.slashCommands.get("viewtasks").execute(interaction)
+        db.get(`tasks_${interaction.guildId}_${interaction.user.id}`).then(async value => {
+            allTasks = [].concat(
+                value.serverTasks,
+                value.personalTasks,
+                value.lateTasks,
+            )
+            if (focusedOption.value.length !== 0) {
+                const filtered = allTasks.filter(choice => choice.name.startsWith(focusedOption.value));
+                await interaction.respond(filtered.map(choice => ({ name: `${choice.name} (${choice.scope[0]})`, value: `${choice.name}_${choice.scope[1]}` }),));
+            } else {
+                await interaction.respond(allTasks.map(choice => ({ name: `${choice.name} (${choice.scope[0]})`, value: `${choice.name}_${choice.scope[1]}` }),));
+            }
+        })
+    },
+```
+GEPS08#5723: bro what
+-human#6756: dumb
+-human#6756: also use unix because fluid timestamps
+-human#6756: <f:1678766400:t>
+-human#6756: <f:1678766400:>
+-human#6756: <t:1678766400:f>
+-human#6756: <t:1678766400:>
+-human#6756: <t:1678766400:R>
+-human#6756: `<t:1678766400:R>`
+-human#6756: `<t:1678766400:F>`
+GEPS08#5723: go
+GEPS08#5723: ```test```
+Yet another test bot but this ti#2529: Name: hello7, Subject: math, Duedate: duedate, Size: daily
+Yet another test bot but this ti#2529: hello, language, duedate, daily
+Yet another test bot but this ti#2529: hello, language, duedate, daily
+hello2, language, duedate, project
+hello3, language, duedate, daily
+hello4, language, duedate,  big
+hello5, math, duedate, big
+hello6, science, duedate, project
+hello7, math, duedate, daily
+Yet another test bot but this ti#2529: hello, language, duedate, daily
+
+hello2, language, duedate, project
+
+hello3, language, duedate, daily
+
+hello4, language, duedate,  big
+
+hello5, math, duedate, big
+
+hello6, science, duedate, project
+
+hello7, math, duedate, daily
+Yet another test bot but this ti#2529: hello, language, duedate, daily
+hello2, language, duedate, project
+hello3, language, duedate, daily
+hello4, language, duedate,  big
+hello5, math, duedate, big
+hello6, science, duedate, project
+hello7, math, duedate, daily
+Yet another test bot but this ti#2529: hello, language, duedate, daily
+
+hello2, language, duedate, project
+
+hello3, language, duedate, daily
+
+hello4, language, duedate,  big
+
+hello5, math, duedate, big
+
+hello6, science, duedate, project
+
+hello7, math, duedate, daily
+Yet another test bot but this ti#2529: hello, language, duedate, daily
+hello2, language, duedate, project
+hello3, language, duedate, daily
+hello4, language, duedate,  big
+hello5, math, duedate, big
+hello6, science, duedate, project
+hello7, math, duedate, daily
+Yet another test bot but this ti#2529: hello, language, duedate, daily
+
+hello2, language, duedate, project
+
+hello3, language, duedate, daily
+
+hello4, language, duedate,  big
+
+hello5, math, duedate, big
+
+hello6, science, duedate, project
+
+hello7, math, duedate, daily
+-human#6756: how do you keep the variable
+-human#6756: doesnt it reset every time
+-human#6756: also
+-human#6756: switch out the sizng for a description
+-human#6756: sizing is kinda dumb
+-human#6756: debatably
+GEPS08#5723: I save it to a txt file
+-human#6756: oh
+-human#6756: ok
+GEPS08#5723: And no
+-human#6756: theres just no context
+-human#6756: you jst get the title of the project
+-human#6756: and
+-human#6756: that its big
+-human#6756: and thjat
+-human#6756: you dont know what to do
+-human#6756: lmao
+GEPS08#5723: Its for me so if I know then it serves its purpose
+-human#6756: wait
+-human#6756: its just for you
+-human#6756: wtf
+-human#6756: you could just install some app
+-human#6756: like what the guy from st robs suggested
+GEPS08#5723: It's cooler and more personalized if I make it
+GEPS08#5723: Also why did u make urs then
+Yet another test bot but this ti#2529: hello, language, duedate, daily
+
+hello2, language, duedate, project
+
+hello3, language, duedate, daily
+
+hello4, language, duedate,  big
+
+hello5, math, duedate, big
+
+hello6, science, duedate, project
+
+hello7, math, duedate, daily
+GEPS08#5723: hello
+GEPS08#5723: hello
+GEPS08#5723: hello
+Yet another test bot but this ti#2529: hello GEPS08#5723, would you like a tour of the server?
+GEPS08#5723: hello
+Yet another test bot but this ti#2529: hello GEPS08#5723, would you like a tour of the server?
+GEPS08#5723: hello
+Yet another test bot but this ti#2529: hello GEPS08#5723, would you like a tour of the server?
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: Name: hello8, Subject: history, Duedate: 03/16/23, Size: daily
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/16/23, daily is due tomorrow
+GEPS08#5723: splitter
+GEPS08#5723: splitter
+
+
+
+
+splitter
+
+
+
+
+splitter
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/16/23, daily is due tomorrow
+GEPS08#5723: g
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/16/23, daily is due tomorrow
+GEPS08#5723: g
+Yet another test bot but this ti#2529: hello, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/16/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily
+
+hello2, language, 03/18/23, project
+
+hello3, language, 03/18/23, daily
+
+hello4, language, 03/18/23,  big
+
+hello5, math, 03/18/23, big
+
+hello6, science, 03/18/23, project
+
+hello7, math, 03/18/23, daily
+
+hello8, history, 03/18/23, daily
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: Name: hello9, Subject: music, Duedate: 03/20/23, Size: bigProject
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: Name: hello10, Subject: french, Duedate: 03/24/23, Size: daily
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello10, french, 03/24/23, big is due in seven days
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello10, french, 03/24/23, big is due in seven days
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello9, music, 03/20/23, bigProject is due in three days
+Yet another test bot but this ti#2529: hello10, french, 03/24/23, big is due in seven days
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily
+
+hello2, language, 03/18/23, project
+
+hello3, language, 03/18/23, daily
+
+hello4, language, 03/18/23,  big
+
+hello5, math, 03/18/23, big
+
+hello6, science, 03/18/23, project
+
+hello7, math, 03/18/23, daily
+
+hello8, history, 03/18/23, daily
+
+hello9, music, 03/20/23, bigProject
+
+hello10, french, 03/24/23, big
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello9, music, 03/20/23, bigProject is due in three days
+Yet another test bot but this ti#2529: hello10, french, 03/24/23, big is due in seven days
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello9, music, 03/20/23, bigProject is due in three days
+Yet another test bot but this ti#2529: hello10, french, 03/24/23, big is due in seven days
+GEPS08#5723: duedate reminders
+GEPS08#5723: u know the logger i made
+GEPS08#5723: ya emojis make it break
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello9, music, 03/20/23, bigProject is due in three days
+Yet another test bot but this ti#2529: hello10, french, 03/24/23, big is due in seven days
+GEPS08#5723: h
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello9, music, 03/20/23, bigProject is due in three days
+Yet another test bot but this ti#2529: hello10, french, 03/24/23, big is due in seven days
+GEPS08#5723: h
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello9, music, 03/20/23, bigProject is due in three days
+Yet another test bot but this ti#2529: hello10, french, 03/24/23, big is due in seven days
+Yet another test bot but this ti#2529: Name: tester, Subject: tester, Duedate: nodate, Size: big
+Yet another test bot but this ti#2529: Name: tester
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello9, music, 03/20/23, bigProject is due in three days
+Yet another test bot but this ti#2529: hello10, french, 03/24/23, big is due in seven days
+Yet another test bot but this ti#2529: Name: tester
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily
+
+hello2, language, 03/18/23, project
+
+hello3, language, 03/18/23, daily
+
+hello4, language, 03/18/23,  big
+
+hello5, math, 03/18/23, big
+
+hello6, science, 03/18/23, project
+
+hello7, math, 03/18/23, daily
+
+hello8, history, 03/18/23, daily
+
+hello9, music, 03/20/23, bigProject
+
+hello10, french, 03/24/23, big
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello9, music, 03/20/23, bigProject is due in three days
+Yet another test bot but this ti#2529: hello10, french, 03/24/23, big is due in seven days
+GEPS08#5723: h
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily
+
+hello2, language, 03/18/23, project
+
+hello3, language, 03/18/23, daily
+
+hello4, language, 03/18/23,  big
+
+hello5, math, 03/18/23, big
+
+hello6, science, 03/18/23, project
+
+hello7, math, 03/18/23, daily
+
+hello8, history, 03/18/23, daily
+
+hello9, music, 03/20/23, bigProject
+
+hello10, french, 03/24/23, big
+
+tester, tester, nodate, big
+Yet another test bot but this ti#2529: Name: tester
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily
+
+hello2, language, 03/18/23, project
+
+hello3, language, 03/18/23, daily
+
+hello4, language, 03/18/23,  big
+
+hello5, math, 03/18/23, big
+
+hello6, science, 03/18/23, project
+
+hello7, math, 03/18/23, daily
+
+hello8, history, 03/18/23, daily
+
+hello9, music, 03/20/23, bigProject
+
+hello10, french, 03/24/23, big
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello9, music, 03/20/23, bigProject is due in three days
+Yet another test bot but this ti#2529: hello10, french, 03/24/23, big is due in seven days
+Yet another test bot but this ti#2529: Name: tester
+Yet another test bot but this ti#2529: Name: a, Subject: a, Duedate: a, Size: daily
+Yet another test bot but this ti#2529: Name: a, Subject: a, Duedate: a, Size: daily
+Yet another test bot but this ti#2529: a, a, a, daily
+Yet another test bot but this ti#2529: Name: s, Subject: s, Duedate: s, Size: daily
+Yet another test bot but this ti#2529: a, a, a, daily
+
+s, s, s, daily
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello9, music, 03/20/23, bigProject is due in three days
+Yet another test bot but this ti#2529: hello10, french, 03/24/23, big is due in seven days
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily
+
+hello2, language, 03/18/23, project
+
+hello3, language, 03/18/23, daily
+
+hello4, language, 03/18/23,  big
+
+hello5, math, 03/18/23, big
+
+hello6, science, 03/18/23, project
+
+hello7, math, 03/18/23, daily
+
+hello8, history, 03/18/23, daily
+
+hello9, music, 03/20/23, bigProject
+
+hello10, french, 03/24/23, big
+
+tester, tester, nodate, big
+Yet another test bot but this ti#2529: Name: tester
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello9, music, 03/20/23, bigProject is due in three days
+Yet another test bot but this ti#2529: hello10, french, 03/24/23, big is due in seven days
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello9, music, 03/20/23, bigProject is due in three days
+Yet another test bot but this ti#2529: hello10, french, 03/24/23, big is due in seven days
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello2, language, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello3, language, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello5, math, 03/18/23, big is due tomorrow
+Yet another test bot but this ti#2529: hello6, science, 03/18/23, project is due tomorrow
+Yet another test bot but this ti#2529: hello7, math, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello8, history, 03/18/23, daily is due tomorrow
+Yet another test bot but this ti#2529: hello9, music, 03/20/23, bigProject is due in three days
+Yet another test bot but this ti#2529: hello10, french, 03/24/23, big is due in seven days
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily
+
+hello2, language, 03/18/23, project
+
+hello3, language, 03/18/23, daily
+
+hello4, language, 03/18/23,  big
+
+hello5, math, 03/18/23, big
+
+hello6, science, 03/18/23, project
+
+hello7, math, 03/18/23, daily
+
+hello8, history, 03/18/23, daily
+
+hello9, music, 03/20/23, bigProject
+
+hello10, french, 03/24/23, big\n
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily
+
+hello2, language, 03/18/23, project
+
+hello3, language, 03/18/23, daily
+
+hello4, language, 03/18/23,  big
+
+hello5, math, 03/18/23, big
+
+hello6, science, 03/18/23, project
+
+hello7, math, 03/18/23, daily
+
+hello8, history, 03/18/23, daily
+
+hello9, music, 03/20/23, bigProject
+
+hello10, french, 03/24/23, big
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily
+
+hello2, language, 03/18/23, project
+
+hello3, language, 03/18/23, daily
+
+hello4, language, 03/18/23,  big
+
+hello5, math, 03/18/23, big
+
+hello6, science, 03/18/23, project
+
+hello7, math, 03/18/23, daily
+
+hello8, history, 03/18/23, daily
+
+hello9, music, 03/20/23, bigProject
+
+hello10, french, 03/24/23, big
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily
+
+hello2, language, 03/18/23, project
+
+hello3, language, 03/18/23, daily
+
+hello4, language, 03/18/23,  big
+
+hello5, math, 03/18/23, big
+
+hello6, science, 03/18/23, project
+
+hello7, math, 03/18/23, daily
+
+hello8, history, 03/18/23, daily
+
+hello9, music, 03/20/23, bigProject
+
+hello10, french, 03/24/23, big
+Yet another test bot but this ti#2529: hello, language, 03/18/23, daily
+
+hello2, language, 03/18/23, project
+
+hello3, language, 03/18/23, daily
+
+hello4, language, 03/18/23,  big
+
+hello5, math, 03/18/23, big
+
+hello6, science, 03/18/23, project
+
+hello7, math, 03/18/23, daily
+
+hello8, history, 03/18/23, daily
+
+hello9, music, 03/20/23, bigProject
+
+hello10, french, 03/24/23, big
+GEPS08#1000: hello
+Yet another test bot but this ti#2529: hello @GEPS08#1000, would you like a tour of the server?
+GEPS08#1000: hello
+Yet another test bot but this ti#2529: hello @GEPS08#1000, would you like a tour of the server?
+GEPS08#1000: hwllo
+GEPS08#1000: hello
+Yet another test bot but this ti#2529: hello <@674390859793563677>, would you like a tour of the server?
