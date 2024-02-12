@@ -1,0 +1,4 @@
+    imagetext = cv2.imread(r'C:\\Users\\' + os.getlogin() + '\\.vscode\\code files\\Keyboard Bot\\textimage.png')
+    Wordinput = pytesseract.image_to_string(imagetext)
+    Wordinput = Wordinput.replace ('\n', ' ')
+    # reading the image for text

@@ -1,0 +1,31 @@
+infultrator
+email:
+9087362987134a@gmail.com
+password:
+thisisabot1234
+status:
+active
+
+protector
+email:
+9087362987134b@gmail.com
+password:
+thisisabot1234
+status:
+not yet created
+
+email botter
+email:
+a9087362987134a@outlook.com 
+password:
+iamabot1234
+status:
+locked
+
+email botter 2
+email:
+a9087362987134b@outlook.com 
+password:
+iamabot1234
+status:
+active

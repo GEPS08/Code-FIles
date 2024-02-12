@@ -1,0 +1,63 @@
+legend:
+
+[Q] = question
+
+[MQ] = main question
+
+[SQ] = sub question
+
+[RQ] = retorical question
+
+[QIH] = questions i actually have
+
+[A] = answer to question
+
+[MA] = answer to main question
+
+[SA] = answer to sub question
+
+[AIH] = answer to the questions i actually have
+
+[PTM] = point to make in the presentation
+
+[SPTM] = sub point to make 
+
+1. [PTM] introduce what the presentation is about
+
+	- [SPTM] loyalists
+
+2. [PTM] introduce what the loyalists are 
+
+	- [SPTM] when they became loyalists (during the forming of usa)
+
+	- [SQ] why were they still loyal to britan
+
+3. [PTM] introduce what they did and why they went to bna
+
+	- [SPTM] why they had to leave to bna
+
+	- [SPTM] why they were so widely hated in the 13 colonies at the time (by the patriots)
+
+	- [SPTM] the torture that they faced from the patriots (getting tarred and feathered) 
+
+4. [PTM] tell people about their experiences on going to bna
+
+	- [SPTM] how they decided what to bring
+
+	- [SQ] what hardships did they face on the way to bna
+
+5. [MQ] why were the loyalists so important to the formation of canada
+
+	- [MA] they acted as settlers 
+
+	- [MA] they prepared the land for farming and housing
+
+	- [MA] they increased the population of engish speaking british people, leading to the british dominant canada today
+
+	- [MA] they mixed the cultures of the people living in bna at the time like french people and the indigenous
+
+6. [MQ] what would have happened if the loyalists never came to bna
+
+	- [MA] canada might have been a more french dominant country
+
+		- [MA] canada might have been an entirely french country 
