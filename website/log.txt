@@ -1,0 +1,1 @@
+10/5/22: i got the menu finnaly working. i needed to set the position of the menu button to relative so they would stay in the same place, but so i could also make them show above other objects. i also added hyperlinks to other pages that i will make but hey currently only have text.

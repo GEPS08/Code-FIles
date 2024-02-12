@@ -1,0 +1,120 @@
+body {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    color: whitesmoke;
+    background: linear-gradient(to left, #f46b45, #eea849);
+    padding: 10px;
+    font-family: Verdana;
+    font-size: 350%;
+    margin: -8px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title img {
+    height: 55px;
+    margin-bottom: -10px;
+}
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.hambar1 {
+    width: 52.5px;
+    height: 7.5px;
+    background-color: whitesmoke;
+    margin: 9px 10px;
+    transition: 0.6s;
+    border-radius: 10px;
+    z-index: 2;
+    position: relative;
+}
+
+.hambar2 {
+    width: 52.5px;
+    height: 7.5px;
+    background-color: whitesmoke;
+    margin: 9px 10px;
+    transition: 0.3s;
+    border-radius: 10px;
+    z-index: 2;
+    position: relative;
+}
+
+.hambar3 {
+    width: 52.5px;
+    height: 7.5px;
+    background-color: whitesmoke;
+    transition: 0.6s;
+    border-radius: 10px;
+    margin: 8.5px 10px;
+    z-index: 2;
+    position: relative;
+}
+
+.change .hambar1 {
+    transform: translate(0px, 16.5px) rotate(-45deg);
+    background-color: rgb(175, 175, 175);
+}
+.change .hambar2 {
+    opacity: 0;
+}
+.change .hambar3 {
+    transform: translate(0px, -16.5px) rotate(45deg);
+    background-color: rgb(175, 175, 175);
+}
+
+.menu {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+
+.menuitems {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.menu a {
+    padding: 8px;
+    text-decoration: none;
+    color: rgb(175, 175, 175);
+    font-size: 36px;
+    display: block;
+    transition: 0.6s;
+}
+
+.me {
+    position: absolute;
+    margin-top: 75px;
+    margin-left: 625px;
+    margin-right: 200px;
+}
+
+.me h1 {
+    font-size: 300%;
+    font-family: Verdana;
+}
+
+.meimage {
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 200px;
+    height: 533.33px;
+    width: 400px;
+}

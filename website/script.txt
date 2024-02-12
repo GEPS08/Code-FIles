@@ -1,0 +1,1 @@
+now that i finaly got a working title bar, with a hammburger manu button, it was time to work on the menu that it opened. . so, now i had a working redirect menu (with cool animations) and another web page you can access with it. progress was looking good.
